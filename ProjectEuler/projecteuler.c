@@ -1,5 +1,7 @@
 #include "stdio.h"
+#include "stdint.h"
 #include "projecteuler.h"
+
 
 int main()
 {
@@ -34,6 +36,28 @@ void euler2() {
 	getchar();
 }
 
+void euler3() {
+	uintmax_t target = 600851475143;
+
+	int largestPrime = 0, quotient = 2;
+	while (target != 0 & quotient <= target)
+	{
+		if (target%quotient == 0) {
+			if (quotient > largestPrime) {
+				largestPrime = quotient;
+			}
+			target /= quotient;
+		}
+		else
+		{
+			quotient += 1;
+		}
+	}
+
+	printf("lagest prime: %d", largestPrime);
+	getchar();
+}
+
 void selectProblem() {
 	int selection;
 	printf("select problem between %d and %d\n", PROBLEM_MIN, PROBLEM_MAX);
@@ -44,6 +68,7 @@ void selectProblem() {
 		{
 		case 1: euler1(); break;
 		case 2: euler2(); break;
+		case 3: euler3(); break;
 		default:
 			break;
 		}
