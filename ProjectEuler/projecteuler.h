@@ -5,7 +5,7 @@
 
 
 const int PROBLEM_MIN = 1;
-const int PROBLEM_MAX = 4;
+const int PROBLEM_MAX = 5;
 
 void selectProblem();
 
@@ -13,5 +13,8 @@ void euler1();
 void euler2();
 void euler3();
 void euler4();
+void euler5();
 
+// helper functions
 bool isPalindrome(int*);
+bool isEvenlyDivisible(int, int);

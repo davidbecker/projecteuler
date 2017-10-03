@@ -106,6 +106,29 @@ bool isPalindrome(int *input)
 	return true;
 }
 
+void euler5()
+{
+	int result = 1, max = 20;
+	while (!isEvenlyDivisible(result, max))
+	{
+		result += 1;
+	}
+	printf("result: %d", result);
+	getchar();
+}
+
+bool isEvenlyDivisible(int result, int max)
+{
+	for (int i = 1; i <= max; i++)
+	{
+		if (result%i != 0)
+		{
+			return false;
+		}
+	}
+	return true;
+}
+
 void selectProblem()
 {
 	int selection;
@@ -119,6 +142,7 @@ void selectProblem()
 		case 2: euler2(); break;
 		case 3: euler3(); break;
 		case 4: euler4(); break;
+		case 5: euler5(); break;
 		default:
 			break;
 		}
