@@ -129,6 +129,22 @@ bool isEvenlyDivisible(int result, int max)
 	return true;
 }
 
+void euler6()
+{
+	int sum = 0;
+	for (int i = 1; i <= 100; i++)
+	{
+		sum += i;
+	}
+	sum *= sum;
+	for (int i = 1; i <= 100; i++)
+	{
+		sum -= i*i;
+	}
+	printf("result: %d", sum);
+	getchar();
+}
+
 void selectProblem()
 {
 	int selection;
@@ -143,6 +159,7 @@ void selectProblem()
 		case 3: euler3(); break;
 		case 4: euler4(); break;
 		case 5: euler5(); break;
+		case 6: euler6(); break;
 		default:
 			break;
 		}
