@@ -145,6 +145,34 @@ void euler6()
 	getchar();
 }
 
+void euler7()
+{
+	int count = 0, primeNumber = 0, temp = 1;
+	while (count < 10001)
+	{
+		temp += 1;
+		if (isPrimeNumber(temp))
+		{
+			primeNumber = temp;
+			count += 1;
+		}
+	}
+	printf("result: %d", primeNumber);
+	getchar();
+}
+
+bool isPrimeNumber(int toTest)
+{
+	for (int i = 2; i < toTest; i++)
+	{
+		if (toTest%i == 0)
+		{
+			return false;
+		}
+	}
+	return true;
+}
+
 void selectProblem()
 {
 	int selection;
@@ -160,6 +188,7 @@ void selectProblem()
 		case 4: euler4(); break;
 		case 5: euler5(); break;
 		case 6: euler6(); break;
+		case 7: euler7(); break;
 		default:
 			break;
 		}
