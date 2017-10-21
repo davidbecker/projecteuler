@@ -177,6 +177,26 @@ bool isPrimeNumber(int toTest)
 	return true;
 }
 
+bool isPrimeNumberWithStart(int toTest, int start)
+{
+	if (toTest < 2 || toTest < start)
+	{
+		return false;
+	}
+	if (start < 2)
+	{
+		start = 2;
+	}
+	for (int i = start; i < toTest; i++)
+	{
+		if (toTest%i == 0)
+		{
+			return false;
+		}
+	}
+	return true;
+}
+
 void euler8()
 {
 	// extra for \0 (will be at number[1000] )
@@ -235,8 +255,23 @@ void euler9()
 		}
 		a += 1;
 	}
+}
 
-
+void euler10()
+{
+	uintmax_t count = 0, lastKnownPrime = 2;
+	unsigned long long result = 0;
+	while (count < 2000000)
+	{
+		if (isPrimeNumber(count, lastKnownPrime))
+		{
+			result += count;
+			lastKnownPrime = count;
+		}
+		count += 1;
+	}
+	printf("result: %llu", result);
+	getchar();
 }
 
 void selectProblem()
@@ -257,6 +292,7 @@ void selectProblem()
 		case 7: euler7(); break;
 		case 8: euler8(); break;
 		case 9: euler9(); break;
+		case 10: euler10(); break;
 		default:
 			break;
 		}
