@@ -209,6 +209,36 @@ void euler8()
 	getchar();
 }
 
+void euler9()
+{
+	bool found = false;
+	int a = 0, b = 0, c = 0;
+	while (a < 1000 && !found)
+	{
+		b = 0;
+		while (b < 1000 && !found)
+		{
+			c = 0;
+			while (c < 1000 && !found)
+			{
+				c += 1;
+				found = a < b && b < c;
+				found = found && (a * a + b * b == c * c);
+				found = found && (a + b + c == 1000);
+				if (found)
+				{
+					printf("result: %d", a * b * c);
+					getchar();
+				}
+			}
+			b += 1;
+		}
+		a += 1;
+	}
+
+
+}
+
 void selectProblem()
 {
 	int selection;
@@ -226,6 +256,7 @@ void selectProblem()
 		case 6: euler6(); break;
 		case 7: euler7(); break;
 		case 8: euler8(); break;
+		case 9: euler9(); break;
 		default:
 			break;
 		}

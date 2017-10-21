@@ -6,7 +6,7 @@
 
 
 const int PROBLEM_MIN = 1;
-const int PROBLEM_MAX = 8;
+const int PROBLEM_MAX = 9;
 
 void selectProblem();
 
@@ -18,6 +18,8 @@ void euler5();
 void euler6();
 void euler7();
 void euler8();
+void euler9();
+
 
 // helper functions
 bool isPalindrome(int*);
